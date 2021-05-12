@@ -46,7 +46,7 @@ class Home extends React.Component {
                     <Col xs={20} sm={16} md={12} lg={16} xl={16}>
                         <div className='wrapper'>
                             <TopContent />
-                            <AlbumSlide />
+                            {/* <AlbumSlide /> */}
 
 
                             <div className='main-content'>
