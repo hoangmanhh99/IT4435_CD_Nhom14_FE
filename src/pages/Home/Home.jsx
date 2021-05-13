@@ -46,15 +46,15 @@ class Home extends React.Component {
                     <Col xs={20} sm={16} md={12} lg={16} xl={16}>
                         <div className='wrapper'>
                             <TopContent />
-                            {/* <AlbumSlide /> */}
+                            <AlbumSlide />
 
 
                             <div className='main-content'>
                                 <Row gutter={24}>
                                     <Col xs={18} sm={18} md={18} lg={18} xl={18}>
                                         <div className='left-side'>
-                                            <ListAlbum onHome={true} page={1} limit={16}/>
-                                            <ListVideo onHone={true} page={1} limit={16} setTotal={setTotal}/>
+                                            {/* <ListAlbum onHome={true} page={1} limit={16}/> */}
+                                            {/* <ListVideo onHone={true} page={1} limit={16} setTotal={setTotal}/> */}
                                             <NewReleaseMusic />
                                             <div className='top-artist'>
                                                 <div>

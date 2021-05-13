@@ -79,7 +79,7 @@ function Register() {
                     </ul>
                 </div>
                 <div className="box-auth-panel-2">
-                    <h3>Bạn đã có tài khoản? <a href="#">Đăng nhập</a></h3>
+                    <h3>Bạn đã có tài khoản? <a href="/login">Đăng nhập</a></h3>
                 </div>
             </Form>
         </div>
