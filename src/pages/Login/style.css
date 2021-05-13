@@ -41,6 +41,10 @@ p#eg {
     border: none;
     font-weight: bold;
 }
+.a-forget-pass {
+    color: gray;
+    font-style: unset;
+}
 .box-auth-panel{
     width: 380px;
     min-height: 60px;
@@ -98,7 +102,7 @@ p#eg {
     color: #3987f1;
     display: block;
     float: right;
-    margin: 0 34px 0 0;
+    margin: 0 25px 0 0;
     position: relative;
     padding: 0 0 0 17px;
 }
@@ -111,9 +115,9 @@ p#eg {
     line-height: 34px;
     text-align: center;
     color: rgba(0, 0, 0, 0.54);
-    margin: 0 0 0 0px;
+    margin: 0 0 0 25px;
     position: relative;
-    padding: 0 0 0 13px;
+    padding: 0 0 0 20px;
 }
 .a-login-ul>li>.a-login-fb>img, .a-login-ul>li>.a-login-google>img {
     position: absolute;

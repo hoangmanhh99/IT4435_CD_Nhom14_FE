@@ -53,8 +53,8 @@ class Home extends React.Component {
                                 <Row gutter={24}>
                                     <Col xs={18} sm={18} md={18} lg={18} xl={18}>
                                         <div className='left-side'>
-                                            <ListAlbum onHome={true} page={1} limit={16}/>
-                                            <ListVideo onHone={true} page={1} limit={16} setTotal={setTotal}/>
+                                            {/* <ListAlbum onHome={true} page={1} limit={16}/> */}
+                                            {/* <ListVideo onHone={true} page={1} limit={16} setTotal={setTotal}/> */}
                                             <NewReleaseMusic />
                                             <div className='top-artist'>
                                                 <div>
