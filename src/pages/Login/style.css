@@ -40,10 +40,19 @@ p#eg {
     margin-top: 24px;
     border: none;
     font-weight: bold;
+    color: #000;
+}
+.login-btn:hover {
+    color: #fff;
 }
 .a-forget-pass {
     color: gray;
     font-style: unset;
+    text-decoration: underline;
+}
+.a-forget-pass:hover {
+    color: #21b685;
+    text-decoration: underline;
 }
 .box-auth-panel{
     width: 380px;

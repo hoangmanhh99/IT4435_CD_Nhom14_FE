@@ -16,6 +16,14 @@ const register = (data) => {
     })
 }
 
+const forgotPassword = (data) => {
+    return http.post('users/forgotPassword', data, {
+        headers: {
+            'Content-Type': "application/json"
+        }
+    })
+}
+
 
 const getUserInfo = (token) => {
     return http.get('get_user_info', {
@@ -30,6 +38,6 @@ const getUserInfo = (token) => {
 export default {
     login,
     register,
-    getUserInfo
-
+    getUserInfo,
+    forgotPassword
 }

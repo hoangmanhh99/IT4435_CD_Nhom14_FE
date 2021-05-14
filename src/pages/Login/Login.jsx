@@ -52,7 +52,7 @@ function Login() {
                     <button onClick={onSubmit} className="login-btn">Đăng nhập</button>
                     <br></br>
 
-                    <a href="/register" className="a-forget-pass">Quên mật khẩu?</a>
+                    <a href="/forgotPassword" className="a-forget-pass">Quên mật khẩu?</a>
                 </div>
                 <div className="box-auth-panel">
                     <h4 className="top">hoặc đăng nhập với </h4>
