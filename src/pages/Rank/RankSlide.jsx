@@ -1,6 +1,6 @@
 import React , {useState, useRef} from 'react';
 import { Carousel, Col, Row } from 'antd';
-import './Content.scss';
+import '../Home/Content.scss';
 import Slider from "react-slick";
 import './style.css';
 import { PlayCircleOutlined } from '@ant-design/icons';
@@ -8,8 +8,8 @@ import { PlayCircleOutlined } from '@ant-design/icons';
 function RankSlide() {
 
     const settings_partner = {
-        dots: true,
-        infinite: true,
+        dots: false,
+        infinite: false,
         slidesToShow: 5,
         slidesToScroll: 1,
         autoplay: true,
@@ -29,7 +29,7 @@ function RankSlide() {
 
     return (
         <div className="partner-slide">
-            <h1 className="hd-white">Đối Tác</h1>
+            <h1>Việt Nam</h1>
             <div>
                 <Slider {...settings_partner}>
                     {

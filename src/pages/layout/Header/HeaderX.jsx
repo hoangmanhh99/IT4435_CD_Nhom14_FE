@@ -260,7 +260,7 @@ function HeaderX({ user, logout }) {
                             </li>
                             <li>
                                 <Dropdown overlay={rank_menu}>
-                                    <a href="#" >BXH</a>
+                                    <a href="/rank" >BXH</a>
                                 </Dropdown>
                             </li>
                             <li>
