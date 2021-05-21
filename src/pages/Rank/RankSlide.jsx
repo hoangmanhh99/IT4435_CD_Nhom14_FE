@@ -12,38 +12,80 @@ function RankSlide() {
         infinite: false,
         slidesToShow: 5,
         slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000
+        autoplay: false,
+        autoplaySpeed: 0
     };
 
     
 
-    const arrData = [{imgsrc: '/images/vng.jpg',text: 'Top 1'},
-                    {imgsrc: '/images/mtp.jpg',text: 'Top 2'},
-                    {imgsrc: '/images/pnc.jpg',text: 'Top 3'},
-                    {imgsrc: '/images/vcpmc.jpg',text: 'Top 4'},
-                    {imgsrc: '/images/universal.jpg',text: 'Top 5'},
-                    {imgsrc: '/images/thang_long.jpg',text: 'Top 6'},
-                    {imgsrc: '/images/ht.jpg',text: 'Top 7'},];
+    const arrData = [{imgsrc: '/images/vng.jpg',top: 'Top 1', name: ''},
+                    {imgsrc: '/images/mtp.jpg',top: 'Top 2', name: ''},
+                    {imgsrc: '/images/pnc.jpg',top: 'Top 3', name: ''},
+                    {imgsrc: '/images/vcpmc.jpg',top: 'Top 4', name: ''},
+                    {imgsrc: '/images/universal.jpg',top: 'Top 5', name: ''},
+                    {imgsrc: '/images/thang_long.jpg',top: 'Top 6', name: ''},
+                    {imgsrc: '/images/ht.jpg',top: 'Top 7', name: ''},
+                    ];
 
 
     return (
         <div className="partner-slide">
-            <h1>Việt Nam</h1>
-            <div>
-                <Slider {...settings_partner}>
-                    {
-                        arrData.map((item, index) => {
-                            return (
-                                <div key={index}>
-                                    <a><img  src={item.imgsrc}></img></a>
-                                    <p>{item.text}</p>
-                                </div>
-                            )
-                        })
-                    }
+            <div className="K1">
+                <h1 className="region">Việt Nam</h1>
+                <div>
+                    <Slider {...settings_partner}>
+                        {
+                            arrData.map((item, index) => {
+                                return (
+                                    <div key={index}>
+                                        <p>{item.top}</p>
+                                        <a><img  src={item.imgsrc}></img></a>
+                                        <p>{item.name}</p>
+                                    </div>
+                                )
+                            })
+                        }
 
-                </Slider>
+                    </Slider>
+                </div>
+            </div>
+            <div className="K1">
+                <h1 className="region">Châu Âu</h1>
+                <div>
+                    <Slider {...settings_partner}>
+                        {
+                            arrData.map((item, index) => {
+                                return (
+                                    <div key={index}>
+                                        <p>{item.top}</p>
+                                        <a><img  src={item.imgsrc}></img></a>
+                                        <p>{item.name}</p>
+                                    </div>
+                                )
+                            })
+                        }
+
+                    </Slider>
+                </div>
+            </div>
+            <div className="K1">
+                <h1 className="region">Hàn Quốc</h1>
+                <div>
+                    <Slider {...settings_partner}>
+                        {
+                            arrData.map((item, index) => {
+                                return (
+                                    <div key={index}>
+                                        <p>{item.top}</p>
+                                        <a><img  src={item.imgsrc}></img></a>
+                                        <p>{item.name}</p>
+                                    </div>
+                                )
+                            })
+                        }
+
+                    </Slider>
+                </div>
             </div>
         </div>
     )
