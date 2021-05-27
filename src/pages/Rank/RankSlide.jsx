@@ -18,13 +18,29 @@ function RankSlide() {
 
     
 
-    const arrData = [{imgsrc: '/images/vng.jpg',top: 'Top 1', name: ''},
-                    {imgsrc: '/images/mtp.jpg',top: 'Top 2', name: ''},
-                    {imgsrc: '/images/pnc.jpg',top: 'Top 3', name: ''},
-                    {imgsrc: '/images/vcpmc.jpg',top: 'Top 4', name: ''},
-                    {imgsrc: '/images/universal.jpg',top: 'Top 5', name: ''},
-                    {imgsrc: '/images/thang_long.jpg',top: 'Top 6', name: ''},
-                    {imgsrc: '/images/ht.jpg',top: 'Top 7', name: ''},
+    const arrData1 = [{imgsrc: '/images/Vi/top1.jpg',top: 'Top 1', name: 'Trốn Tìm', author:'Đen,MTV'},
+                    {imgsrc: '/images/Vi/top2.jpg',top: 'Top 2', name: 'The Playah', author:'Soobin,SlimV'},
+                    {imgsrc: '/images/Vi/top3.jpg',top: 'Top 3', name: 'Bao Nhiêu', author:'Chillies'},
+                    {imgsrc: '/images/Vi/top4.jpg',top: 'Top 4', name: 'LaylaLay', author:'Jack'},
+                    {imgsrc: '/images/Vi/top5.jpg',top: 'Top 5', name: 'Trả Người Về Tự Do', author:'Tăng Phúc,Minh Tuyết'},
+                    {imgsrc: '/images/Vi/top6.jpg',top: 'Top 6', name: 'Muộn rồi mà sao còn', author:'Sơn Tùng M-TP'},
+                    {imgsrc: '/images/Vi/top7.jpg',top: 'Top 7', name: 'Hiện Đại', author:'Khắc Việt'},
+                    ];
+    const arrData2 = [{imgsrc:'/images/Eu/top1.jpg',top: 'Top 1', name: 'Sour Candy', author:'BLACKPINK, Lady Gaga'},
+                    {imgsrc: '/images/Eu/top2.jpg',top: 'Top 2', name: 'Funny', author:'Zedd'},
+                    {imgsrc: '/images/Eu/top3.jpg',top: 'Top 3', name: 'WAP', author:'Cardi B,Megan thee stallion'},
+                    {imgsrc: '/images/Eu/top4.jpg',top: 'Top 4', name: 'cardigan', author:'Taylor Swift'},
+                    {imgsrc: '/images/Eu/top5.jpg',top: 'Top 5', name: 'Black Parade', author:'Beyonce'},
+                    {imgsrc: '/images/Eu/top6.jpg',top: 'Top 6', name: 'Stuck with U', author:'Ariana Grande,Justin Bieber'},
+                    {imgsrc: '/images/Eu/top7.jpg',top: 'Top 7', name: 'Binding Lights', author:'The weekend'},
+                    ];
+    const arrData3 = [{imgsrc: '/images/Kr/top1.jpg',top: 'Top 1', name: 'On The Ground', author:'Rose(BlackPink)'},
+                    {imgsrc: '/images/Kr/top2.jpg',top: 'Top 2', name: 'Life goes on', author:'BTS'},
+                    {imgsrc: '/images/Kr/top3.jpg',top: 'Top 3', name: 'Dynamite', author:'BTS'},
+                    {imgsrc: '/images/Kr/top4.jpg',top: 'Top 4', name: 'Lovesick Girls', author:'BLACKPINK'},
+                    {imgsrc: '/images/Kr/top5.jpg',top: 'Top 5', name: 'Ice Cream', author:'Selena Gomez,BLACKPINK'},
+                    {imgsrc: '/images/Kr/top6.jpg',top: 'Top 6', name: 'pporappippam', author:'Sunmi'},
+                    {imgsrc: '/images/Kr/top7.jpg',top: 'Top 7', name: 'Summer Hate', author:'Zico,Bi Rain'},
                     ];
 
 
@@ -35,12 +51,13 @@ function RankSlide() {
                 <div>
                     <Slider {...settings_partner}>
                         {
-                            arrData.map((item, index) => {
+                            arrData1.map((item, index) => {
                                 return (
                                     <div key={index}>
-                                        <p>{item.top}</p>
-                                        <a><img  src={item.imgsrc}></img></a>
-                                        <p>{item.name}</p>
+                                        <p className="top">{item.top}</p>
+                                        <a><img  src={item.imgsrc} className="imgthumb"></img></a>
+                                        <p className="txtname">{item.name}</p>
+                                        <p className="txtauthor">{item.author}</p>
                                     </div>
                                 )
                             })
@@ -54,12 +71,13 @@ function RankSlide() {
                 <div>
                     <Slider {...settings_partner}>
                         {
-                            arrData.map((item, index) => {
+                            arrData2.map((item, index) => {
                                 return (
                                     <div key={index}>
-                                        <p>{item.top}</p>
-                                        <a><img  src={item.imgsrc}></img></a>
-                                        <p>{item.name}</p>
+                                        <p className="top">{item.top}</p>
+                                        <a><img  src={item.imgsrc} className="imgthumb"></img></a>
+                                        <p className="txtname">{item.name}</p>
+                                        <p className="txtauthor">{item.author}</p>
                                     </div>
                                 )
                             })
@@ -73,12 +91,13 @@ function RankSlide() {
                 <div>
                     <Slider {...settings_partner}>
                         {
-                            arrData.map((item, index) => {
+                            arrData3.map((item, index) => {
                                 return (
                                     <div key={index}>
-                                        <p>{item.top}</p>
-                                        <a><img  src={item.imgsrc}></img></a>
-                                        <p>{item.name}</p>
+                                        <p className="top">{item.top}</p>
+                                        <a><img  src={item.imgsrc} className="imgthumb"></img></a>
+                                        <p className="txtname">{item.name}</p>
+                                        <p className="txtauthor">{item.author}</p>
                                     </div>
                                 )
                             })
