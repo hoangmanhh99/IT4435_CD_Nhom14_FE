@@ -53,7 +53,7 @@ function RankSlide() {
                         {
                             arrData1.map((item, index) => {
                                 return (
-                                    <div key={index}>
+                                    <div key={index} className="in">
                                         <p className="top">{item.top}</p>
                                         <a><img  src={item.imgsrc} className="imgthumb"></img></a>
                                         <p className="txtname">{item.name}</p>
@@ -73,7 +73,7 @@ function RankSlide() {
                         {
                             arrData2.map((item, index) => {
                                 return (
-                                    <div key={index}>
+                                    <div key={index} className="in">
                                         <p className="top">{item.top}</p>
                                         <a><img  src={item.imgsrc} className="imgthumb"></img></a>
                                         <p className="txtname">{item.name}</p>
@@ -93,7 +93,7 @@ function RankSlide() {
                         {
                             arrData3.map((item, index) => {
                                 return (
-                                    <div key={index}>
+                                    <div key={index} className="in">
                                         <p className="top">{item.top}</p>
                                         <a><img  src={item.imgsrc} className="imgthumb"></img></a>
                                         <p className="txtname">{item.name}</p>

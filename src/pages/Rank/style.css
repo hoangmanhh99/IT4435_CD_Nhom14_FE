@@ -31,3 +31,11 @@ p.txtauthor {
 span.anticon.anticon-play-circle.iconcircle {
     padding-left: 10px;
 }
+.in {
+    width: 90%!important;
+    padding-left: 4%;
+    padding-top: 6%;
+}
+.in:hover{
+    background: #22354f;
+}
