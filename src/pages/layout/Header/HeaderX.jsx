@@ -211,7 +211,7 @@ function HeaderX({ user, logout }) {
                     <div className='logo'>
                         <div title='nghe nhac online, tai nhac mpc'>
                             <Link to={'/'}>
-                                <img src='/icons/nhacvn.png' alt="nhacvn"></img>
+                                <img src='./assets/images/oud.png' alt="nhacvn"></img>
                             </Link>
                         </div>
                     </div>

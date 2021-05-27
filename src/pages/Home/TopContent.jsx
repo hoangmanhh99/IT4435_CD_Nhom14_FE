@@ -12,7 +12,8 @@ export default function TopContent(props) {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        adaptiveHeight: true
+        adaptiveHeight: true,
+        centerMode: true
     };
 
     const arrData = ["images/2909.jpg", "images/3981.jpg", "images/3972.jpg", "images/3984.jpg", "images/3981.jpg", "images/3984.jpg"]
@@ -20,7 +21,7 @@ export default function TopContent(props) {
     return (
         <div class='top-content-slide'>
             <Row gutter={24}>
-                <Col xs={16} sm={16} md={16} lg={16} xl={16}>
+                <Col xs={20} sm={20} md={20} lg={20} xl={20}>
                     <Slider {...settings_top_content}>
                         {
                             arrData.map((item, index) => {
@@ -33,7 +34,7 @@ export default function TopContent(props) {
                         }
                     </Slider>
                 </Col>
-                <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+                <Col xs={4} sm={4} md={4} lg={4} xl={4}>
 
                 </Col>
             </Row>

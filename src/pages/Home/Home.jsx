@@ -9,6 +9,7 @@ import PartnerSlide from './PartnerSlide';
 import ListVideo from '../Video/ListVideo';
 import ListAlbum from '../Album/ListAlbum';
 import NewReleaseMusic from './NewReleaseMusic';
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 
 class Home extends React.Component {
@@ -39,11 +40,13 @@ class Home extends React.Component {
 
         return (
             <div className='content-side'>
+                <Sidebar></Sidebar>
+                
                 <Row>
-                    <Col xs={2} sm={4} md={6} lg={4} xl={4}>
+                    <Col xs={5} sm={5} md={5} lg={5} xl={5}>
 
                     </Col>
-                    <Col xs={20} sm={16} md={12} lg={16} xl={16}>
+                    <Col xs={19} sm={19} md={19} lg={19} xl={19}>
                         <div className='wrapper'>
                             <TopContent />
                             <AlbumSlide />
@@ -152,9 +155,9 @@ class Home extends React.Component {
                             </div>
                         </div>
                     </Col>
-                    <Col xs={2} sm={4} md={6} lg={4} xl={4}>
+                    {/* <Col xs={2} sm={2} md={2} lg={2} xl={2}>
 
-                    </Col>
+                    </Col> */}
                 </Row>
             </div>
 

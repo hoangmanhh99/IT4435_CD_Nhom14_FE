@@ -1,28 +1,36 @@
 
 .footer-top{
+    background-color: #181818;
     clear: both;
+    margin-top: 20px;
 }
 
 .info{
     float: left;
+    margin-left: 100px;
+    margin-right: 40px;
 }
 
 .musics{
     float: left;
     margin-left: 40px;
+    margin-right: 40px;
 }
 
 .rank{
     float: left;
     margin-left: 40px;
+    margin-right: 40px;
 }
 .connect-us{
     float: left;
     margin-left: 40px;
+    margin-right: 40px;
 }
 .download-app{
     float: left;
     margin-left: 40px;
+    margin-right: 100px;
 }
     .download-app #download-option{
         display: flex;
@@ -39,7 +47,8 @@
 }
 
 .footer-bottom{
-    margin-top: 200px;
+    background-color: #181818;
+    margin-top: 160px;
 }
 .icon-nhacvn-bot{
     width: 10%;

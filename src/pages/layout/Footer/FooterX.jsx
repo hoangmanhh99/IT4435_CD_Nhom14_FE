@@ -7,12 +7,12 @@ import './style.css';
 function FooterX() {
 
     return (
-        <div style={{background: "#21324a"}}>
+        <div style={{background: "#181818"}}>
             <Row>
-                <Col xs={2} sm={4} md={6} lg={4} xl={4}>
+                <Col xs={2} sm={2} md={2} lg={2} xl={2}>
 
                 </Col>
-                <Col xs={20} sm={16} md={12} lg={16} xl={16} className='footer-top'>
+                <Col xs={20} sm={20} md={20} lg={20} xl={20} className='footer-top'>
                     <div className='info'>
                         <ul>
                             <li><h3 className='color-white'>Thông Tin</h3></li>
@@ -109,7 +109,7 @@ function FooterX() {
 
                 </Col>
 
-                <Col xs={2} sm={4} md={6} lg={4} xl={4}>
+                <Col xs={2} sm={2} md={2} lg={2} xl={2}>
 
                 </Col>
             </Row>
