@@ -27,3 +27,6 @@ p.txtauthor {
     color: #b7b7b7;
     font-size: 13px;
 }
+span.anticon.anticon-play-circle.iconcircle {
+    padding-left: 10px;
+}

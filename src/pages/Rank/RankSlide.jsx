@@ -47,7 +47,7 @@ function RankSlide() {
     return (
         <div className="partner-slide">
             <div className="K1">
-                <h1 className="region">Việt Nam</h1>
+                <h1 className="region">Việt Nam<PlayCircleOutlined className="iconcircle"></PlayCircleOutlined></h1>
                 <div>
                     <Slider {...settings_partner}>
                         {
@@ -67,7 +67,7 @@ function RankSlide() {
                 </div>
             </div>
             <div className="K1">
-                <h1 className="region">Châu Âu</h1>
+                <h1 className="region">Châu Âu<PlayCircleOutlined className="iconcircle"></PlayCircleOutlined></h1>
                 <div>
                     <Slider {...settings_partner}>
                         {
@@ -87,7 +87,7 @@ function RankSlide() {
                 </div>
             </div>
             <div className="K1">
-                <h1 className="region">Hàn Quốc</h1>
+                <h1 className="region">Hàn Quốc<PlayCircleOutlined className="iconcircle"></PlayCircleOutlined></h1>
                 <div>
                     <Slider {...settings_partner}>
                         {
