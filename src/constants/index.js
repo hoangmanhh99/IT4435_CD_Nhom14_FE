@@ -57,3 +57,10 @@ export const LIBRARYTABS = [
     path: '/library/albums'
   }
 ]
+
+export const LOGINBTN = [
+  {
+    title: 'Login',
+    path: '/login'
+  }
+]

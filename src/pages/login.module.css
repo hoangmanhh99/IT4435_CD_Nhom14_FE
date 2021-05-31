@@ -1,0 +1,63 @@
+.LoginPage {
+  text-align: center;
+  margin-top: 20%;
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* .TitleM {
+    color: white;
+    margin-right: 10px;
+} */
+
+.EmailInput {
+  width: 50%;
+  color: rgb(237, 241, 243);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(233, 223, 223, 0.02);
+  margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 27px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.PasswordInput {
+  width: 50%;
+  color: rgb(237, 241, 243);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 27px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.LoginBtn {
+  cursor: pointer;
+  border-radius: 5em;
+  color: #fff;
+  background: linear-gradient(to right, #9c27b0, #e040fb);
+  border: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 20px;
+  /* box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04); */
+}
