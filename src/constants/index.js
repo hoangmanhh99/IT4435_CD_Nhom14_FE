@@ -7,19 +7,19 @@ export default {
 
 export const MENU = [
   {
-    title: 'Ana sayfa',
+    title: 'Trang chủ',
     path: '/',
     icon: <Icon.Home />,
     iconSelected: <Icon.HomeActive />
   },
   {
-    title: 'Ara',
+    title: 'Tìm kiếm',
     path: '/search',
     icon: <Icon.Search />,
     iconSelected: <Icon.SearchActive />
   },
   {
-    title: 'Kitaplığın',
+    title: 'Thư viện',
     path: '/library',
     icon: <Icon.Library />,
     iconSelected: <Icon.LibraryActive />
@@ -28,12 +28,12 @@ export const MENU = [
 
 export const PLAYLISTBTN = [
     {
-      title: 'Çalma Listesi Oluştur',
+      title: 'Tạo Playlist',
       path: '/',
       ImgName: 'createPlaylist',
     },
     {
-      title: 'Beğenilen Şarkılar',
+      title: 'Bài hát đã thích',
       path: '/',
       ImgName: 'popularSong',
     }
@@ -41,19 +41,19 @@ export const PLAYLISTBTN = [
 
 export const LIBRARYTABS = [
   {
-    title: 'Çalma Listeleri',
+    title: 'Playlist',
     path: '/library'
   },
   {
-    title: 'Podcast\'ler',
+    title: 'Podcast',
     path: '/library/podcasts'
   },
   {
-    title: 'Sanatçılar',
+    title: 'Nghệ sĩ',
     path: '/library/artists'
   },
   {
-    title: 'Albümler',
+    title: 'Album',
     path: '/library/albums'
   }
 ]

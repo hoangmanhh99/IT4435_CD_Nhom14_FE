@@ -23,7 +23,7 @@ function Library(){
 function PlaylistTab(){
     return (
         <div>
-            <TitleM>Çalma Listeleri</TitleM>
+            <TitleM>Playlist</TitleM>
             <div className={styles.Grid}>
                 {PLAYLIST.filter(item => item.type == 'playlist').map((item) => {
                     return (
