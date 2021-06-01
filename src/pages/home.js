@@ -4,13 +4,13 @@ import TitleL from '../component/text/title-l';
 import TitleM from '../component/text/title-m'
 import PlaylistCardS from '../component/cards/playlist-card-s';
 import PlaylistCardM from '../component/cards/playlist-card-m';
-
+import PlaylistCardP from '../component/cards/playlist-card-p';
 import styles from "./home.module.css";
 
 import { PLAYLIST } from '../data/index'
 import songAPI from '../api/song';
 function Home(){
-    const [listVideo, setListVideo] = useState([]);
+    const [video, setVideo] = useState([]);
     
 
     useEffect(() => {
@@ -22,7 +22,7 @@ function Home(){
     const rechieveMusicVideosOnhome = async () => {
         let {data} = await songAPI.getAllVideo(1, 20);
         if(data.success){
-            setListVideo(data.results);
+            setVideo(data.results);
             console.log('data:',data);
         }
     }
@@ -45,6 +45,7 @@ function Home(){
                                 <PlaylistCardS 
                                     key={item.title}
                                     data={item}
+
                                 />
                             );
                         })}
@@ -57,9 +58,9 @@ function Home(){
                     </div>
                     
                     <div className={styles.SectionCardsMedium}>
-                        {PLAYLIST.slice(0, 6).map((item) => {
+                        {video.slice(0, 6).map((item) => {
                             return (
-                                <PlaylistCardM 
+                                <PlaylistCardP
                                     key={item.title}
                                     data={item}
                                 />
