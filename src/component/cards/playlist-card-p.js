@@ -8,7 +8,7 @@ import PlayButton from '../buttons/play-button';
 
 import styles from "./playlist-card-m.module.css";
 
-function PlaylistCardM(props) {
+function PlaylistCardP(props) {
 	const[isthisplay, setIsthisPlay] = useState(false)
 
 	useEffect(() => {
@@ -24,7 +24,7 @@ function PlaylistCardM(props) {
 					</div>
 					<div className={styles.Title}>
 						<TextBoldL>{props?.data?.name}</TextBoldL>
-						<TextRegularM>{props.data.artist}</TextRegularM>
+						<TextRegularM>{props.data?.Singers}</TextRegularM>
 					</div>
 				</div>
 			</Link>
@@ -45,4 +45,4 @@ const mapStateToProps = (state) => {
 	};
 };
   
-export default connect(mapStateToProps, { changeTrack })(PlaylistCardM);
+export default connect(mapStateToProps, { changeTrack })(PlaylistCardP);
