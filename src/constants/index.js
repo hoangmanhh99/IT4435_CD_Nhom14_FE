@@ -27,16 +27,16 @@ export const MENU = [
 ]
 
 export const PLAYLISTBTN = [
-    {
-      title: 'Tạo Playlist',
-      path: '/',
-      ImgName: 'createPlaylist',
-    },
-    {
-      title: 'Bài hát đã thích',
-      path: '/',
-      ImgName: 'popularSong',
-    }
+  {
+    title: 'Tạo Playlist',
+    path: '/',
+    ImgName: 'createPlaylist',
+  },
+  {
+    title: 'Bài hát đã thích',
+    path: '/',
+    ImgName: 'popularSong',
+  }
 ]
 
 export const LIBRARYTABS = [
@@ -44,10 +44,10 @@ export const LIBRARYTABS = [
     title: 'Playlist',
     path: '/library'
   },
-  {
-    title: 'Podcast',
-    path: '/library/podcasts'
-  },
+  // {
+  //   title: 'Podcast',
+  //   path: '/library/podcasts'
+  // },
   {
     title: 'Nghệ sĩ',
     path: '/library/artists'
@@ -55,5 +55,12 @@ export const LIBRARYTABS = [
   {
     title: 'Album',
     path: '/library/albums'
+  }
+]
+
+export const LOGINBTN = [
+  {
+    title: 'Login',
+    path: '/login'
   }
 ]

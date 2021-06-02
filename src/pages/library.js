@@ -1,33 +1,46 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
 import TitleM from '../component/text/title-m';
 import Topnav from '../component/topnav/topnav';
-import PlaylistCardM from '../component/cards/playlist-card-m'
+import PlaylistCardM from '../component/cards/playlist-card-m';
+import PlaylistCardP from '../component/cards/playlist-card-p';
+import PlaylistCardC from '../component/cards/playlist-card-c';
 import { PLAYLIST } from "../data/index";
 
 import styles from "./library.module.css";
-
-function Library(){
+import albumapi from '../api/album';
+import songAPI from '../api/song';
+import singerAPI from '../api/singer';
+function Library() {
     return (
         <div className={styles.LibPage}>
-                <Topnav tabButtons={true}/>
-                <div className={styles.Library}>
-                        <Route exact path="/library"><PlaylistTab /></Route>
-                        <Route path="/library/podcasts"><PodcastTab /></Route>
-                        <Route path="/library/artists"><ArtistTab /></Route>
-                        <Route path="/library/albums"><AlbumTab /></Route>
-                </div>
+            <Topnav tabButtons={true} />
+            <div className={styles.Library}>
+                <Route exact path="/library"><PlaylistTab /></Route>
+                <Route path="/library/podcasts"><PodcastTab /></Route>
+                <Route path="/library/artists"><ArtistTab /></Route>
+                <Route path="/library/albums"><AlbumTab /></Route>
+            </div>
         </div>
     );
 }
 
-function PlaylistTab(){
+function PlaylistTab() {
+    const [playlist, setPlayList] = useState([]);
+    useEffect(async () => {
+        let { data } = await songAPI.getAllVideo(1, 12);
+        if (data.success) {
+            setPlayList(data.results);
+            console.log('data:1', data);
+        }
+    }, [])
     return (
         <div>
             <TitleM>Playlist</TitleM>
             <div className={styles.Grid}>
-                {PLAYLIST.filter(item => item.type == 'playlist').map((item) => {
+                {playlist.map((item) => {
                     return (
-                        <PlaylistCardM 
+                        <PlaylistCardP
                             key={item.title}
                             data={item}
                         />
@@ -38,14 +51,14 @@ function PlaylistTab(){
     );
 }
 
-function PodcastTab(){
+function PodcastTab() {
     return (
         <div>
             <TitleM>Podcast'ler</TitleM>
             <div className={styles.Grid}>
                 {PLAYLIST.filter(item => item.type == 'podcast').map((item) => {
                     return (
-                        <PlaylistCardM 
+                        <PlaylistCardC
                             key={item.title}
                             data={item}
                         />
@@ -56,23 +69,50 @@ function PodcastTab(){
     );
 }
 
-function ArtistTab(){
+function ArtistTab() {
+    const [singer, setAlbum] = useState([]);
+    useEffect(async () => {
+        let { data } = await singerAPI.getAllSinger(1, 10);
+        if (data.success) {
+            setAlbum(data.data);
+            console.log('singer:', data);
+        }
+    }, [])
     return (
         <div>
-            <TitleM>Sanatçılar</TitleM>
+            <TitleM>Nghệ sĩ</TitleM>
+            <div className={styles.Grid}>
+                {singer.map((item) => {
+                    return (
+                        <PlaylistCardC
+                            key={item._id}
+                            data={item}
+                        />
+                    );
+                })}
+            </div>
         </div>
     );
 }
 
-function AlbumTab(){
+function AlbumTab() {
+    const [albums, setAlbum] = useState([]);
+    useEffect(async () => {
+        let { data } = await albumapi.getAlbumList(1, 20);
+        if (data.success) {
+            setAlbum(data.results);
+            console.log('data:', data);
+        }
+    }, [])
+
     return (
         <div>
-            <TitleM>Albümler</TitleM>
+            <TitleM>Album</TitleM>
             <div className={styles.Grid}>
-                {PLAYLIST.filter(item => item.type == 'albüm').map((item) => {
+                {albums.map((item) => {
                     return (
-                        <PlaylistCardM 
-                            key={item.title}
+                        <PlaylistCardM
+                            key={item.name}
                             data={item}
                         />
                     );

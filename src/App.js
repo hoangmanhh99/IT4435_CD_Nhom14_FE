@@ -15,7 +15,8 @@ import PlaylistPage from './pages/playlist';
 import CONST from './constants/index';
 import { PLAYLIST } from './data/index';
 import styles from './style/App.module.css';
-
+import Login from './pages/login';
+import Register from './pages/register';
 function App() {
   const size = useWindowSize();
 
@@ -38,6 +39,12 @@ function App() {
             </Route>
             <Route exact path="/playlist/:path">
                 <PlaylistPage />
+            </Route>
+            <Route path="/login">
+                <Login />
+            </Route>
+            <Route path="/register">
+                <Register />
             </Route>
           </Switch>
           <Footer />

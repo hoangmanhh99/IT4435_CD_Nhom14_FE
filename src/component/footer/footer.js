@@ -12,7 +12,7 @@ import { PLAYLIST } from "../../data/index";
 import CONST from '../../constants/index';
 import styles from "./footer.module.css";
 
-function Footer(props){
+function Footer(props) {
     const size = useWindowSize();
 
     const [currentTime, setCurrentTime] = useState(0);
@@ -26,9 +26,9 @@ function Footer(props){
 
     useEffect(() => {
         if (props.isPlaying) {
-          audioRef.current.play();
+            audioRef.current.play();
         } else {
-          audioRef.current.pause();
+            audioRef.current.pause();
         }
     }, [audioRef, props.isPlaying]);
 
@@ -44,13 +44,14 @@ function Footer(props){
         audioRef.current.volume = volume;
     }, [audioRef, volume]);
 
-    
+
     useEffect(() => {
         audioRef.current.addEventListener('ended', () => {
-            if(props.trackData.trackKey[1] === (PLAYLIST[props.trackData.trackKey[0]].playlistData.length)-1){
+            console.log('play');
+            if (props.trackData.trackKey[1] === (PLAYLIST[props.trackData.trackKey[0]].playlistData.length) - 1) {
                 props.changeTrack([props.trackData.trackKey[0], 0])
-            }else{
-                props.changeTrack([props.trackData.trackKey[0], parseInt(props.trackData.trackKey[1])+1])
+            } else {
+                props.changeTrack([props.trackData.trackKey[0], parseInt(props.trackData.trackKey[1]) + 1])
             }
         })
     });
@@ -61,9 +62,9 @@ function Footer(props){
                 <FooterLeft />
                 <div className={styles.footerMid}>
                     <MusicControlBox />
-                    <MusicProgressBar 
-                        currentTime={currentTime} 
-                        duration={duration} 
+                    <MusicProgressBar
+                        currentTime={currentTime}
+                        duration={duration}
                         handleTrackClick={handleTrackClick}
                     />
                     <Audio
@@ -74,9 +75,9 @@ function Footer(props){
                         isPlaying={props.isPlaying}
                     />
                 </div>
-                {size.width > CONST.MOBILE_SIZE && 
-                    <FooterRight 
-                        volume={volume} 
+                {size.width > CONST.MOBILE_SIZE &&
+                    <FooterRight
+                        volume={volume}
                         setVolume={setVolume}
                     />
                 }
@@ -92,5 +93,5 @@ const mapStateToProps = (state) => {
         isPlaying: state.isPlaying
     };
 };
-  
+
 export default connect(mapStateToProps, { changeTrack, changePlay })(Footer);
