@@ -1,5 +1,5 @@
 import { PLAYLIST } from "../data/index";
-import { PLAYPAUSE, CHANGETRACK } from "../actions/index";
+import { PLAYPAUSE, CHANGETRACK, CHANGETRACKSONG } from "../actions/index";
 
 const INITIAL_STATE = {
   trackData: {
@@ -19,24 +19,33 @@ export const reducer = (state = INITIAL_STATE, action) => {
         ...state,
         isPlaying: action.payload
       };
+    case CHANGETRACKSONG:
+      console.log('redux: ', action);
+      return {
+        ...state,
+        trackData: {
+          ...state.trackData,
+          trackKey: action.payload.path,
+          track: action.payload.path,
+          trackName: action.payload?.name,
+          trackImg: action.payload?.image,
+          trackArtist: action.payload?.singers?.name,
+        }
+      };
     case CHANGETRACK:
       return {
         ...state,
         trackData: {
           ...state.trackData,
           trackKey: action.payload,
-          track: `${
-            PLAYLIST[action.payload[0]].playlistData[action.payload[1]].link
-          }`,
-          trackName: `${
-            PLAYLIST[action.payload[0]].playlistData[action.payload[1]].songName
-          }`,
-          trackImg: `${
-            PLAYLIST[action.payload[0]].playlistData[action.payload[1]].songimg
-          }`,
-          trackArtist: `${
-            PLAYLIST[action.payload[0]].playlistData[action.payload[1]].songArtist
-          }`
+          track: `${PLAYLIST[action.payload[0]].playlistData[action.payload[1]].link
+            }`,
+          trackName: `${PLAYLIST[action.payload[0]].playlistData[action.payload[1]].songName
+            }`,
+          trackImg: `${PLAYLIST[action.payload[0]].playlistData[action.payload[1]].songimg
+            }`,
+          trackArtist: `${PLAYLIST[action.payload[0]].playlistData[action.payload[1]].songArtist
+            }`
         }
       };
     default:

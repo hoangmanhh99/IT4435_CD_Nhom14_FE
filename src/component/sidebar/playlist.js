@@ -12,38 +12,38 @@ function Playlist() {
   const [video, setVideo] = useState([]);
 
   useEffect(() => {
-        
+
     rechieve_playlistOnhome();
 
-}, [])
-const rechieve_playlistOnhome = async () => {
-  let {data} = await songAPI.getAllVideo(1,20);
-  if(data.success){
+  }, [])
+  const rechieve_playlistOnhome = async () => {
+    let { data } = await songAPI.getAllVideo(1, 20);
+    if (data.success) {
       setVideo(data.results);
-      console.log('datasong2:',data);
+      console.log('datasong2:', data);
+    }
   }
-}
-    return (
-      <div className={styles.Playlist}>
-        <TitleS>Mục của bạn</TitleS>
+  return (
+    <div className={styles.Playlist}>
+      <TitleS>Mục của bạn</TitleS>
 
-        <div>
-          {PLAYLISTBTN.map((playlist) => {
-            return (
-                <PlaylistButton 
-                  href={playlist.path} 
-                  ImgName={playlist.ImgName}
-                  key={playlist.title}
-                >
-                  {playlist.title}
-                </PlaylistButton>
-            );
-          })}
-        </div>
+      <div>
+        {PLAYLISTBTN.map((playlist) => {
+          return (
+            <PlaylistButton
+              href={playlist.path}
+              ImgName={playlist.ImgName}
+              key={playlist.title}
+            >
+              {playlist.title}
+            </PlaylistButton>
+          );
+        })}
+      </div>
 
-        <hr className={styles.hr}/>
+      <hr className={styles.hr} />
 
-        <div>
+      {/* <div>
           {PLAYLIST.map((list) => {
             return (
               <Link to={`/playlist/${list.link}`} key={list.title}>
@@ -51,9 +51,9 @@ const rechieve_playlistOnhome = async () => {
               </Link>
             );
           })}
-        </div>
-      </div>
-    );
+        </div> */}
+    </div>
+  );
 }
-  
+
 export default Playlist;

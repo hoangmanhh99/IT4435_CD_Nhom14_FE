@@ -10,27 +10,28 @@ import { PLAYLIST } from "../data/index";
 import styles from "./library.module.css";
 import albumapi from '../api/album';
 import songAPI from '../api/song';
-function Library(){
+import singerAPI from '../api/singer';
+function Library() {
     return (
         <div className={styles.LibPage}>
-                <Topnav tabButtons={true}/>
-                <div className={styles.Library}>
-                        <Route exact path="/library"><PlaylistTab /></Route>
-                        <Route path="/library/podcasts"><PodcastTab /></Route>
-                        <Route path="/library/artists"><ArtistTab /></Route>
-                        <Route path="/library/albums"><AlbumTab /></Route>
-                </div>
+            <Topnav tabButtons={true} />
+            <div className={styles.Library}>
+                <Route exact path="/library"><PlaylistTab /></Route>
+                <Route path="/library/podcasts"><PodcastTab /></Route>
+                <Route path="/library/artists"><ArtistTab /></Route>
+                <Route path="/library/albums"><AlbumTab /></Route>
+            </div>
         </div>
     );
 }
 
-function PlaylistTab(){
+function PlaylistTab() {
     const [playlist, setPlayList] = useState([]);
-    useEffect(async() => {
-        let {data} = await songAPI.getAllVideo(1,12);
-        if(data.success){
+    useEffect(async () => {
+        let { data } = await songAPI.getAllVideo(1, 12);
+        if (data.success) {
             setPlayList(data.results);
-            console.log('data:1',data);
+            console.log('data:1', data);
         }
     }, [])
     return (
@@ -39,7 +40,7 @@ function PlaylistTab(){
             <div className={styles.Grid}>
                 {playlist.map((item) => {
                     return (
-                        <PlaylistCardP 
+                        <PlaylistCardP
                             key={item.title}
                             data={item}
                         />
@@ -50,7 +51,7 @@ function PlaylistTab(){
     );
 }
 
-function PodcastTab(){
+function PodcastTab() {
     return (
         <div>
             <TitleM>Podcast'ler</TitleM>
@@ -68,21 +69,39 @@ function PodcastTab(){
     );
 }
 
-function ArtistTab(){
+function ArtistTab() {
+    const [singer, setAlbum] = useState([]);
+    useEffect(async () => {
+        let { data } = await singerAPI.getAllSinger(1, 10);
+        if (data.success) {
+            setAlbum(data.data);
+            console.log('singer:', data);
+        }
+    }, [])
     return (
         <div>
-            <TitleM>Sanatçılar</TitleM>
+            <TitleM>Nghệ sĩ</TitleM>
+            <div className={styles.Grid}>
+                {singer.map((item) => {
+                    return (
+                        <PlaylistCardC
+                            key={item._id}
+                            data={item}
+                        />
+                    );
+                })}
+            </div>
         </div>
     );
 }
 
-function AlbumTab(){
+function AlbumTab() {
     const [albums, setAlbum] = useState([]);
-    useEffect(async() => {
-        let {data} = await albumapi.getAlbumList(1,20);
-        if(data.success){
+    useEffect(async () => {
+        let { data } = await albumapi.getAlbumList(1, 20);
+        if (data.success) {
             setAlbum(data.results);
-            console.log('data:',data);
+            console.log('data:', data);
         }
     }, [])
 
@@ -92,7 +111,7 @@ function AlbumTab(){
             <div className={styles.Grid}>
                 {albums.map((item) => {
                     return (
-                        <PlaylistCardM 
+                        <PlaylistCardM
                             key={item.name}
                             data={item}
                         />
