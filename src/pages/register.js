@@ -13,41 +13,46 @@ import styles from "./login.module.css";
 import userAPI from '../api/user';
 import {useCookies} from 'react-cookie';
 
-function Login() {
+function Register() {
     const initialUser = {
         name: '',
         password: '',
         email: ''
     }
+    
   const [cookie, setCookie] = useCookies(["userToken", "user"]);
     const history = useHistory();
 
-    const [user, setUser] = useState({email: "", password: ""});
-    // const [userRes, setUserRes] = useState(initialUser);
-    const onSubmitLogin = async () => {
-        let {data} = await userAPI.login(user);
-        if(data.result){
-            console.log("login: ", data.result);
-            setCookie("userToken", data.result.accesstoken, {path: '/'});
-            setCookie("user", {avatar: data.result.avatar, name: data.result.name}, {path: '/'});
-            // history.push('/');
-        }else{
+    const [userRes, setUserRes] = useState({email: "", password: ""});
+    
+    const onSubmit = async () => {
+        let {data} = await userAPI.register(userRes);
+
+        console.log("register: ", data);
+        if(data.status){
+            notification.success({message: 'Đăng ký tài khoản thành công!'});
+            window.scrollTo(0, 0);
+            history.push('/login');
+        }
+        else{
             notification.error({message: data.message});
         }
     }
 
+    const onChange = (e) => {
+        const {name, value} = e.target;
+        setUserRes({...userRes, [name]: value});
+    }
+
+
   function validateForm() {
-    return user.email.length > 0 && user.password.length > 0;
+    return userRes.email.length > 0 && userRes.password.length > 0;
   }
 
   function handleSubmit(event) {
     event.preventDefault();
   }
-
-  const onChange = (e) => {
-    const {name, value} = e.target;
-    setUser({...user, [name]: value});
-}
+ 
   return (
     <div className={styles.LoginPage}>
       <Form onSubmit={handleSubmit}>
@@ -59,7 +64,7 @@ function Login() {
             autoFocus
             type="email"
             name="email"
-            value={user.email}
+            value={userRes.email}
             onChange={onChange}
           />
         </Form.Group>
@@ -70,16 +75,16 @@ function Login() {
             placeholder="Password"
             type="password"
             name="password"
-            value={user.password}
+            value={userRes.password}
             onChange={onChange}
           />
         </Form.Group>
-        <Button block size="lg" onClick={onSubmitLogin} disabled={!validateForm()} className={styles.LoginBtn}>
-          Login
-        </Button> 
+        <Button block size="lg" onClick={onSubmit} disabled={!validateForm()} className={styles.LoginBtn}>
+          Register
+        </Button>
       </Form>
     </div>
   );
 }
 
-export default Login;
+export default Register;
