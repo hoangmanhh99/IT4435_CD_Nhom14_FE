@@ -88,7 +88,7 @@ function AlbumTab(){
 
     return (
         <div>
-            <TitleM>Albümler</TitleM>
+            <TitleM>Album</TitleM>
             <div className={styles.Grid}>
                 {albums.map((item) => {
                     return (

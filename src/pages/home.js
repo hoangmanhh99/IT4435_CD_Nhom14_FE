@@ -7,25 +7,35 @@ import PlaylistCardM from '../component/cards/playlist-card-m';
 import PlaylistCardP from '../component/cards/playlist-card-p';
 import styles from "./home.module.css";
 
-import { PLAYLIST } from '../data/index'
+import { PLAYLIST } from '../data/index';
+import albumAPI from '../api/album';
 import songAPI from '../api/song';
 function Home(){
     const [video, setVideo] = useState([]);
     
-
+    const [album, setAlbum] = useState([]);
     useEffect(() => {
         
-            rechieveMusicVideosOnhome();
+            rechieve_albumOnhome();
+            rechieve_playlistOnhome();
       
     }, [])
 
-    const rechieveMusicVideosOnhome = async () => {
-        let {data} = await songAPI.getAllVideo(1, 20);
+    const rechieve_albumOnhome = async () => {
+        let {data} = await albumAPI.getAlbumList(1,20);
         if(data.success){
-            setVideo(data.results);
-            console.log('data:',data);
+            setAlbum(data.results);
+            console.log('data album:',data);
         }
     }
+    const rechieve_playlistOnhome = async () => {
+        let {data} = await songAPI.getAllVideo(1,20);
+        if(data.success){
+            setVideo(data.results);
+            console.log('datasong:',data);
+        }
+    }
+
     
     return (
         <div className={styles.Home}>
@@ -40,9 +50,9 @@ function Home(){
                     </div>
 
                     <div className={styles.SectionCards}>
-                        {PLAYLIST.map((item) => {
+                        {video.map((item) => {
                             return (
-                                <PlaylistCardS 
+                                <PlaylistCardP 
                                     key={item.title}
                                     data={item}
 
@@ -58,9 +68,9 @@ function Home(){
                     </div>
                     
                     <div className={styles.SectionCardsMedium}>
-                        {video.slice(0, 6).map((item) => {
+                        {album.slice(0,6).map((item) => {
                             return (
-                                <PlaylistCardP
+                                <PlaylistCardM
                                     key={item.title}
                                     data={item}
                                 />
