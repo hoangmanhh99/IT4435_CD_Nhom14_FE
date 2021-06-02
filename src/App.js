@@ -16,6 +16,9 @@ import CONST from './constants/index';
 import { PLAYLIST } from './data/index';
 import styles from './style/App.module.css';
 import Login from './pages/login';
+import AdminLogin from './pages/Admin/Login/AdminLogin';
+import AppRouter from './Routes/AppRouter';
+import AdminRouter from './Routes/AdminRouter';
 
 function App() {
   const size = useWindowSize();
@@ -42,6 +45,9 @@ function App() {
             </Route>
             <Route path="/login">
                 <Login />
+            </Route>
+            <Route path="/admin/login">
+                <AdminLogin /> 
             </Route>
           </Switch>
           <Footer />
