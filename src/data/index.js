@@ -12,13 +12,13 @@ export const PLAYLIST = [
 		playlistData: [
 			{
 				index: "1",
-				songName: "Yaşıyorum Sil Baştan",
+				songName: "Muộn rồi mà sao còn",
 				songimg:
-					"https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea",
-				songArtist: "Ari Barokos",
+					"https://data.chiasenhac.com/data/cover/140/139611.jpg",
+				songArtist: "Sơn Tùng M-TP",
 				link:
-					"https://server1.indiryuklemp3.org/mp3_files/yasiyorum-sil-bastan-h8OmycopAr-0.mp3",
-				trackTime: "3:19",
+					"https://storage.googleapis.com/it4435-chuyende.appspot.com/music/MuonRoiMaSaoCon-SonTungMTP-7011803.mp3",
+				trackTime: "4:35",
 			},
 			{
 				index: "2",
@@ -505,17 +505,17 @@ export const SEARCHCARDS = [
 	{
 		bgcolor: 'rgb(160, 195, 210)',
 		imgurl: 'https://t.scdn.co/images/68433b0ee5b5465b8e926c42b84cbcdb.jpeg',
-		title: 'Senin için Hazırlandı',
+		title: 'Podcast',
 	},
 	{
 		bgcolor: 'rgb(75, 145, 125)',
 		imgurl: 'https://t.scdn.co/images/4b7472015a274eadbc00119f5141e548.jpeg',
-		title: 'Listeler',
+		title: 'Dành cho bạn',
 	},
 	{
 		bgcolor: 'rgb(111, 111, 111)',
 		imgurl: 'https://t.scdn.co/images/ffbc60a80ba64554ac09130827c43d06.jpeg',
-		title: 'Metal',
+		title: 'Cổ điển',
 	},
 	{
 		bgcolor: 'rgb(235, 30, 50)',
@@ -538,16 +538,6 @@ export const SEARCHCARDS = [
 		title: 'Hip Hop',
 	},
 	{
-		bgcolor: 'rgb(160, 195, 210)',
-		imgurl: 'https://t.scdn.co/images/acc7b5d7b1264d0593ec05c020d0a689.jpeg',
-		title: 'Yeni Çıkanlar',
-	},
-	{
-		bgcolor: 'rgb(245, 155, 35)',
-		imgurl: 'https://t.scdn.co/images/ad4d5c268a214f78920517e76e6ed107.jpeg',
-		title: 'Popcast\'ler',
-	},
-	{
 		bgcolor: 'rgb(180, 155, 200)',
 		imgurl: 'https://t.scdn.co/images/d0fb2ab104dc4846bdc56d72b0b0d785.jpeg',
 		title: 'Keşfet',
@@ -555,26 +545,21 @@ export const SEARCHCARDS = [
 	{
 		bgcolor: 'rgb(255, 100, 55)',
 		imgurl: 'https://t.scdn.co/images/60075fbc12304968941c7445a971fb9d.jpeg',
-		title: 'Concerts',
+		title: 'Thư giãn',
 	},
 	{
 		bgcolor: 'rgb(80, 155, 245)',
 		imgurl: 'https://t.scdn.co/images/baf681efc57145e180589e027496b101.jpeg',
-		title: 'Ruh Hali',
+		title: 'Tâm trạng',
 	},
 	{
 		bgcolor: 'rgb(245, 155, 35)',
 		imgurl: 'https://t.scdn.co/images/194b9d722de34cefb3b716c653b4526b.png',
-		title: 'Evde',
+		title: 'Ngủ ngon',
 	},
 	{
 		bgcolor: 'rgb(160, 195, 210)',
 		imgurl: 'https://t.scdn.co/images/2470fe22d03a4375a9501dce8cfb2b8c.jpeg',
 		title: 'Chill',
 	},
-	{
-		bgcolor: 'rgb(180, 155, 200)',
-		imgurl: 'https://t.scdn.co/images/cf23ab0343e047daa88703e21c01a4aa.jpeg',
-		title: 'Odaklan',
-	}
 ]

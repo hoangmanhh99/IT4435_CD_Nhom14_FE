@@ -10,33 +10,33 @@ import styles from "./home.module.css";
 import { PLAYLIST } from '../data/index';
 import albumAPI from '../api/album';
 import songAPI from '../api/song';
-function Home(){
+function Home() {
     const [video, setVideo] = useState([]);
-    
+
     const [album, setAlbum] = useState([]);
     useEffect(() => {
-        
-            rechieve_albumOnhome();
-            rechieve_playlistOnhome();
-      
+
+        rechieve_albumOnhome();
+        rechieve_playlistOnhome();
+
     }, [])
 
     const rechieve_albumOnhome = async () => {
-        let {data} = await albumAPI.getAlbumList(1,20);
-        if(data.success){
+        let { data } = await albumAPI.getAlbumList(1, 10);
+        if (data.success) {
             setAlbum(data.results);
-            console.log('data album:',data);
+            console.log('data album:', data);
         }
     }
     const rechieve_playlistOnhome = async () => {
-        let {data} = await songAPI.getAllVideo(1,20);
-        if(data.success){
+        let { data } = await songAPI.getAllVideo(1, 10);
+        if (data.success) {
             setVideo(data.results);
-            console.log('datasong:',data);
+            console.log('datasong:', data);
         }
     }
 
-    
+
     return (
         <div className={styles.Home}>
             <div className={styles.HoverBg}></div>
@@ -46,13 +46,13 @@ function Home(){
             <div className={styles.Content}>
                 <section>
                     <div className={styles.SectionTitle}>
-                        <TitleL>Dành cho bạn</TitleL>
+                        <TitleL>Bài hát</TitleL>
                     </div>
 
                     <div className={styles.SectionCards}>
                         {video.map((item) => {
                             return (
-                                <PlaylistCardP 
+                                <PlaylistCardS
                                     key={item.title}
                                     data={item}
 
@@ -64,11 +64,11 @@ function Home(){
 
                 <section>
                     <div className={styles.SectionTitle}>
-                        <TitleM>Top thịnh hành</TitleM>
+                        <TitleM>Album</TitleM>
                     </div>
-                    
+
                     <div className={styles.SectionCardsMedium}>
-                        {album.slice(0,6).map((item) => {
+                        {album.slice(0, 6).map((item) => {
                             return (
                                 <PlaylistCardM
                                     key={item.title}
