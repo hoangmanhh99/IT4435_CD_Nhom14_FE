@@ -27,7 +27,7 @@ function Login() {
     const onSubmitLogin = async () => {
         let {data} = await userAPI.login(user);
         if(data.result){
-            console.log("login: ", data.result);
+            // console.log("login: ", data.result);
             setCookie("userToken", data.result.accesstoken, {path: '/'});
             setCookie("user", {avatar: data.result.avatar, name: data.result.name}, {path: '/'});
             // history.push('/');
