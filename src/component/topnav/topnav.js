@@ -22,7 +22,7 @@ function Topnav({ search = false, tabButtons = false }) {
         </span>
         <span>
           <Link to="/login">
-            <Button className={styles.ProfileBtn} href="">
+            <Button className={styles.ProfileBtn} href="" style={{ marginRight: '10px' }}>
               Đăng nhập
             </Button>
           </Link>

@@ -1,11 +1,11 @@
 export const PLAYLIST = [
 	{
 		index: "0",
-		type: "albüm",
-		title: "Lafıma Gücenme",
-		link: "lafimagucenme",
+		type: "album",
+		title: "Album",
+		link: "albumDetail",
 		imgUrl:
-			"https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea",
+			"https://data.chiasenhac.com/data/cover/140/139611.jpg",
 		hoverColor: "rgb(224, 112, 16)",
 		artist: "Ari Barokos",
 		playlistBg: "rgb(224, 112, 16)",
@@ -20,138 +20,118 @@ export const PLAYLIST = [
 					"https://storage.googleapis.com/it4435-chuyende.appspot.com/music/MuonRoiMaSaoCon-SonTungMTP-7011803.mp3",
 				trackTime: "4:35",
 			},
-			{
-				index: "2",
-				songName: "Salaksın",
-				songimg:
-					"https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea",
-				songArtist: "Ari Barokos",
-				link:
-					"https://server1.indiryuklemp3.org/mp3_files/salaksin-I6hfUKt21R-0.mp3",
-				trackTime: "5:12",
-			},
-			{
-				index: "3",
-				songName: "Yanlızlık Kanında Var",
-				songimg:
-					"https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea",
-				songArtist: "Ari Barokos",
-				link:
-					"https://server1.indiryuklemp3.org/mp3_files/yalnizlik-kaninda-var-0vWfgutCZj-0.mp3",
-				trackTime: "3:48",
-			},
-			{
-				index: "4",
-				songName: "Gavurlar",
-				songimg:
-					"https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea",
-				songArtist: "Ari Barokos",
-				link:
-					"https://server1.indiryuklemp3.org/mp3_files/gavurlar-hzfjF7ZWLE-0.mp3",
-				trackTime: "4:08",
-			},
-			{
-				index: "5",
-				songName: "Yalan (Demo)",
-				songimg:
-					"https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea",
-				songArtist: "Ari Barokos",
-				link:
-					"https://p.scdn.co/mp3-preview/8dd8fbb1721d4964028ad362a80ad3ae2422f547?cid=6d083ea30aaa46428fbf1590d31f6750",
-				trackTime: "0:30",
-			},
-			{
-				index: "6",
-				songName: "Beyni Yok (Demo)",
-				songimg:
-					"https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea",
-				songArtist: "Ari Barokos",
-				link:
-					"https://p.scdn.co/mp3-preview/70bcfb8ae773f9e74501a6b28d545ac04abd0fdd?cid=6d083ea30aaa46428fbf1590d31f6750",
-				trackTime: "0:30",
-			},
-			{
-				index: "7",
-				songName: "Nafile (Demo)",
-				songimg:
-					"https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea",
-				songArtist: "Ari Barokos",
-				link:
-					"https://p.scdn.co/mp3-preview/225415a01d8093fbde5462def2f54c805d5ce4a5?cid=6d083ea30aaa46428fbf1590d31f6750",
-				trackTime: "0:30",
-			},
-			{
-				index: "8",
-				songName: "Ömrümüz Yine Geçiyor (Demo)",
-				songimg:
-					"https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea",
-				songArtist: "Ari Barokos",
-				link:
-					"https://p.scdn.co/mp3-preview/d306c50b99606e47644c5ed8a405da31094d0e2b?cid=6d083ea30aaa46428fbf1590d31f6750",
-				trackTime: "0:30",
-			},
-			{
-				index: "9",
-				songName: "Yangın Var (Demo)",
-				songimg:
-					"https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea",
-				songArtist: "Ari Barokos",
-				link:
-					"https://p.scdn.co/mp3-preview/8e8aa510101ebb69e5c8c7ae3fd0c20ee21be3ef?cid=6d083ea30aaa46428fbf1590d31f6750",
-				trackTime: "0:30",
-			},
-			{
-				index: "10",
-				songName: "Egotango (Demo)",
-				songimg:
-					"https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea",
-				songArtist: "Ari Barokos",
-				link:
-					"https://p.scdn.co/mp3-preview/a74af1d9813db16e08ffdcb52c0c3d43c1b15a61?cid=6d083ea30aaa46428fbf1590d31f6750",
-				trackTime: "0:30",
-			},
+			// {
+			// 	index: "2",
+			// 	songName: "Salaksın",
+			// 	songimg:
+			// 		"https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea",
+			// 	songArtist: "Ari Barokos",
+			// 	link:
+			// 		"https://server1.indiryuklemp3.org/mp3_files/salaksin-I6hfUKt21R-0.mp3",
+			// 	trackTime: "5:12",
+			// },
+			// {
+			// 	index: "3",
+			// 	songName: "Yanlızlık Kanında Var",
+			// 	songimg:
+			// 		"https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea",
+			// 	songArtist: "Ari Barokos",
+			// 	link:
+			// 		"https://server1.indiryuklemp3.org/mp3_files/yalnizlik-kaninda-var-0vWfgutCZj-0.mp3",
+			// 	trackTime: "3:48",
+			// },
+			// {
+			// 	index: "4",
+			// 	songName: "Gavurlar",
+			// 	songimg:
+			// 		"https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea",
+			// 	songArtist: "Ari Barokos",
+			// 	link:
+			// 		"https://server1.indiryuklemp3.org/mp3_files/gavurlar-hzfjF7ZWLE-0.mp3",
+			// 	trackTime: "4:08",
+			// },
+			// {
+			// 	index: "5",
+			// 	songName: "Yalan (Demo)",
+			// 	songimg:
+			// 		"https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea",
+			// 	songArtist: "Ari Barokos",
+			// 	link:
+			// 		"https://p.scdn.co/mp3-preview/8dd8fbb1721d4964028ad362a80ad3ae2422f547?cid=6d083ea30aaa46428fbf1590d31f6750",
+			// 	trackTime: "0:30",
+			// },
+			// {
+			// 	index: "6",
+			// 	songName: "Beyni Yok (Demo)",
+			// 	songimg:
+			// 		"https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea",
+			// 	songArtist: "Ari Barokos",
+			// 	link:
+			// 		"https://p.scdn.co/mp3-preview/70bcfb8ae773f9e74501a6b28d545ac04abd0fdd?cid=6d083ea30aaa46428fbf1590d31f6750",
+			// 	trackTime: "0:30",
+			// },
+			// {
+			// 	index: "7",
+			// 	songName: "Nafile (Demo)",
+			// 	songimg:
+			// 		"https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea",
+			// 	songArtist: "Ari Barokos",
+			// 	link:
+			// 		"https://p.scdn.co/mp3-preview/225415a01d8093fbde5462def2f54c805d5ce4a5?cid=6d083ea30aaa46428fbf1590d31f6750",
+			// 	trackTime: "0:30",
+			// },
+			// {
+			// 	index: "8",
+			// 	songName: "Ömrümüz Yine Geçiyor (Demo)",
+			// 	songimg:
+			// 		"https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea",
+			// 	songArtist: "Ari Barokos",
+			// 	link:
+			// 		"https://p.scdn.co/mp3-preview/d306c50b99606e47644c5ed8a405da31094d0e2b?cid=6d083ea30aaa46428fbf1590d31f6750",
+			// 	trackTime: "0:30",
+			// },
+			// {
+			// 	index: "9",
+			// 	songName: "Yangın Var (Demo)",
+			// 	songimg:
+			// 		"https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea",
+			// 	songArtist: "Ari Barokos",
+			// 	link:
+			// 		"https://p.scdn.co/mp3-preview/8e8aa510101ebb69e5c8c7ae3fd0c20ee21be3ef?cid=6d083ea30aaa46428fbf1590d31f6750",
+			// 	trackTime: "0:30",
+			// },
+			// {
+			// 	index: "10",
+			// 	songName: "Egotango (Demo)",
+			// 	songimg:
+			// 		"https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea",
+			// 	songArtist: "Ari Barokos",
+			// 	link:
+			// 		"https://p.scdn.co/mp3-preview/a74af1d9813db16e08ffdcb52c0c3d43c1b15a61?cid=6d083ea30aaa46428fbf1590d31f6750",
+			// 	trackTime: "0:30",
+			// },
 		],
 	},
 	{
 		index: "1",
-		type: "playlist",
-		title: "Heavy Queens",
-		link: "heavyqueens",
+		type: "Nghệ Sĩ",
+		title: "Sơn Tùng M-TP",
+		link: "singerDetail",
 		imgUrl:
-			"https://i.scdn.co/image/ab67706f000000021e117034167831d5574aba62",
+			"https://data.chiasenhac.com/data/cover/140/139611.jpg",
 		hoverColor: "rgb(216, 24, 40)",
-		artist: "Music needs women #IWD2021.",
+		artist: "",
 		playlistBg: "rgb(216, 24, 40)",
 		playlistData: [
 			{
 				index: "1",
-				songName: "Peacekeepers",
+				songName: "Muộn rồi mà sao còn",
 				songimg:
-					"https://i.scdn.co/image/ab67616d0000485179927e37a012986bd320a183",
-				songArtist: "Metalite",
+					"https://data.chiasenhac.com/data/cover/140/139611.jpg",
+				songArtist: "Sơn Tùng M-TP",
 				link:
-					"https://p.scdn.co/mp3-preview/2a80c8096e1573c71c76c4f3839e6569098cbca4?cid=6d083ea30aaa46428fbf1590d31f6750",
-				trackTime: "0:30",
-			},
-			{
-				index: "2",
-				songName: "Gravity",
-				songimg:
-					"https://i.scdn.co/image/ab67616d0000485148e441eb6dff6f6e51cc8c7c",
-				songArtist: "Skarlett Riot",
-				link:
-					"https://p.scdn.co/mp3-preview/dfcdaa892ad2ece164ad12ddcff95ec1c8a4515b?cid=6d083ea30aaa46428fbf1590d31f6750",
-				trackTime: "0:30",
-			},
-			{
-				index: "3",
-				songName: "Memoriam",
-				songimg:
-					"https://i.scdn.co/image/ab67616d0000485145ec6fceefb51f0ab5913454",
-				songArtist: "Eleine",
-				link:
-					"https://p.scdn.co/mp3-preview/fb27d89173d867bb163599d5b1027816e98d8819?cid=6d083ea30aaa46428fbf1590d31f6750",
-				trackTime: "0:30",
+					"https://storage.googleapis.com/it4435-chuyende.appspot.com/music/MuonRoiMaSaoCon-SonTungMTP-7011803.mp3",
+				trackTime: "4:35",
 			},
 		],
 	},

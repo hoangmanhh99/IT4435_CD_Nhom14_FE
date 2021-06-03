@@ -9,7 +9,7 @@ import PlayButton from '../buttons/play-button';
 import styles from "./playlist-card-m.module.css";
 //library->Album
 function PlaylistCardM(props) {
-	const[isthisplay, setIsthisPlay] = useState(false)
+	const [isthisplay, setIsthisPlay] = useState(false)
 
 	useEffect(() => {
 		setIsthisPlay(parseInt(props.data.index) === props.trackData.trackKey[0])
@@ -17,7 +17,7 @@ function PlaylistCardM(props) {
 
 	return (
 		<div className={styles.PlaylistCardSBox}>
-			<Link to={`/playlist/${props.data.link}`}>
+			<Link to={`/playlist/albumDetail`}>
 				<div className={styles.PlaylistCardS}>
 					<div className={styles.ImgBox}>
 						<img src={props.data?.cover_image?.path} alt={props.data.title} />
@@ -28,9 +28,9 @@ function PlaylistCardM(props) {
 					</div>
 				</div>
 			</Link>
-			<div 
-				onClick={() => props.changeTrack([parseInt(props.data.index), 0])} 
-				className={`${styles.IconBox} ${isthisplay&&props.isPlaying ? styles.ActiveIconBox : ''}`}
+			<div
+				onClick={() => props.changeTrack([parseInt(props.data.index), 0])}
+				className={`${styles.IconBox} ${isthisplay && props.isPlaying ? styles.ActiveIconBox : ''}`}
 			>
 				<PlayButton isthisplay={isthisplay} />
 			</div>
@@ -44,5 +44,5 @@ const mapStateToProps = (state) => {
 		isPlaying: state.isPlaying
 	};
 };
-  
+
 export default connect(mapStateToProps, { changeTrack })(PlaylistCardM);
