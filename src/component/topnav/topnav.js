@@ -9,8 +9,11 @@ import Login from "../../pages/login";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import {useCookies} from 'react-cookie';
 
 function Topnav({ search = false, tabButtons = false }) {
+  const [cookie, removeCookie, setCookie] = useCookies(["userToken", "user"]);
+  console.log(cookie)
   return (
     <nav className={styles.Topnav}>
       <div>
@@ -20,6 +23,7 @@ function Topnav({ search = false, tabButtons = false }) {
           {search ? <SearchBox /> : ""}
           {tabButtons ? <LibraryTabBtn /> : ""}
         </span>
+        { !cookie.userToken && 
         <span>
           <Link to="/login">
             <Button className={styles.ProfileBtn} href="" style={{ marginRight: '10px' }}>
@@ -32,6 +36,14 @@ function Topnav({ search = false, tabButtons = false }) {
             </Button>
           </Link>
         </span>
+}
+{ cookie.userToken && 
+  <span>
+            <Button onClick={() => setCookie("userToken", "", {path: '/'})} className={styles.ProfileBtn} href="" style={{ marginRight: '10px' }}>
+              Đăng xuất
+            </Button>
+        </span>
+        }
       </div>
     </nav>
   );

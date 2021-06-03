@@ -30,7 +30,7 @@ function Login() {
             // console.log("login: ", data.result);
             setCookie("userToken", data.result.accesstoken, {path: '/'});
             setCookie("user", {avatar: data.result.avatar, name: data.result.name}, {path: '/'});
-            // history.push('/');
+            history.push('/');
         }else{
             notification.error({message: data.message});
         }
