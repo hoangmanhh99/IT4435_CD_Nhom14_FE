@@ -1,5 +1,6 @@
-import React, { useState, useEffect  } from 'react';
-import { BrowserRouter as Router,
+import React, { useState, useEffect } from 'react';
+import {
+  BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
@@ -8,6 +9,7 @@ import Sidebar from './component/sidebar/sidebar';
 import MobileNavigation from './component/sidebar/mobile-navigation';
 import Footer from './component/footer/footer';
 import Home from './pages/home';
+import Favorite from './pages/favorite';
 import Search from './pages/search';
 import Library from './pages/library';
 import PlaylistPage from './pages/playlist';
@@ -21,35 +23,38 @@ function App() {
   const size = useWindowSize();
 
   return (
-        <Router>
-        <div className={styles.layout}>
-          {size.width > CONST.MOBILE_SIZE 
-            ? <Sidebar /> 
-            : <MobileNavigation />
-          }
-          <Switch>
-            <Route exact path="/">
-                <Home />
-            </Route>
-            <Route path="/search">
-                <Search />
-            </Route>
-            <Route path="/library">
-                <Library />
-            </Route>
-            <Route exact path="/playlist/:path">
-                <PlaylistPage />
-            </Route>
-            <Route path="/login">
-                <Login />
-            </Route>
-            <Route path="/register">
-                <Register />
-            </Route>
-          </Switch>
-          <Footer />
-        </div>
-      </Router>
+    <Router>
+      <div className={styles.layout}>
+        {size.width > CONST.MOBILE_SIZE
+          ? <Sidebar />
+          : <MobileNavigation />
+        }
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/search">
+            <Search />
+          </Route>
+          <Route path="/library">
+            <Library />
+          </Route>
+          <Route exact path="/playlist/:path">
+            <PlaylistPage />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/register">
+            <Register />
+          </Route>
+          <Route exact path="/favorite">
+            <Favorite />
+          </Route>
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
