@@ -17,7 +17,7 @@ function PlaylistCardP(props) {
 
 	return (
 		<div className={styles.PlaylistCardSBox}>
-			<Link to={`/playlist/${props.data.link}`}>
+			<Link to={`/playlist/singerDetail`}>
 				<div className={styles.PlaylistCardS}>
 					<div className={styles.ImgBox}>
 						<img src={props.data?.avatar?.path} alt={props.data?.name} />

@@ -3,8 +3,8 @@ import TextBoldM from '../text/text-bold-m';
 
 import styles from "./playlist-details.module.css";
 
-function PlaylistDetails({data}) {
-	return (
+function PlaylistDetails({ data }) {
+    return (
         <div className={styles.playlistDetails}>
             <div className={styles.imgBox}>
                 <img src={data.imgUrl} />
@@ -13,14 +13,14 @@ function PlaylistDetails({data}) {
                 <TitleS>{data.type}</TitleS>
                 <h1>{data.title}</h1>
                 <div className={styles.Artist}>
-                    <figure>
+                    {/* <figure>
                         <img src={data.imgUrl} />
                     </figure>
-                    <TextBoldM>{data.artist}</TextBoldM>
+                    <TextBoldM>{data.artist}</TextBoldM> */}
                 </div>
             </div>
         </div>
-	);
+    );
 }
 
 export default PlaylistDetails;
