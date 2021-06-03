@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from 'react-router';
-import { notification} from 'antd';
+import { Button, notification} from 'antd';
 // import {useCookies} from 'react-cookie';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Topnav from "../component/topnav/topnav";
-import TitleM from "../component/text/title-m";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import Topnav from "../component/topnav/topnav";
+// import TitleM from "../component/text/title-m";
 
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 import styles from "./login.module.css";
 
 import userAPI from '../api/user';
@@ -28,16 +28,24 @@ function Register() {
     const onSubmit = async () => {
         let {data} = await userAPI.register(userRes);
 
-        console.log("register: ", data);
-        if(data.status){
-            notification.success({message: 'Đăng ký tài khoản thành công!'});
+        console.log("register: ", data.status);
+        // if(data.status === 1){
+            // notification.success({message: 'Đăng ký tài khoản thành công!'});
+            notification.open({
+                message: 'Đăng ký tài khoản thành công!',
+                
+              });
             window.scrollTo(0, 0);
-            history.push('/login');
+            setTimeout(() => {
+                history.push({
+                    pathname: "/login"
+                })
+            }, 1000);
         }
-        else{
-            notification.error({message: data.message});
-        }
-    }
+        // else{
+            // notification.error({message: 'Error'});
+        // }
+    // }
 
     const onChange = (e) => {
         const {name, value} = e.target;
@@ -49,13 +57,13 @@ function Register() {
     return userRes.email.length > 0 && userRes.password.length > 0;
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
+//   function handleSubmit(event) {
+//     event.preventDefault();
+//   }
  
   return (
     <div className={styles.LoginPage}>
-      <Form onSubmit={handleSubmit}>
+      <Form>
         <Form.Group size="lg" controlId="email">
           {/* <Form.Label className={styles.TitleM}>Email</Form.Label> */}
           <Form.Control
@@ -65,6 +73,18 @@ function Register() {
             type="email"
             name="email"
             value={userRes.email}
+            onChange={onChange}
+          />
+        </Form.Group>
+        <Form.Group size="lg" controlId="email">
+          {/* <Form.Label className={styles.TitleM}>Email</Form.Label> */}
+          <Form.Control
+            className={styles.EmailInput}
+            placeholder="Nhập Tên"
+            autoFocus
+            type="text"
+            name="name"
+            value={userRes.name}
             onChange={onChange}
           />
         </Form.Group>
@@ -79,8 +99,9 @@ function Register() {
             onChange={onChange}
           />
         </Form.Group>
+        
         <Button block size="lg" onClick={onSubmit} disabled={!validateForm()} className={styles.LoginBtn}>
-          Register
+          Đăng kí
         </Button>
       </Form>
     </div>

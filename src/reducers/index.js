@@ -1,5 +1,6 @@
 import { PLAYLIST } from "../data/index";
-import { PLAYPAUSE, CHANGETRACK, CHANGETRACKSONG } from "../actions/index";
+import { PLAYPAUSE, CHANGETRACK, CHANGETRACKSONG, FAVORITE } from "../actions/index";
+import favorite from "../pages/favorite";
 
 const INITIAL_STATE = {
   trackData: {
@@ -9,7 +10,8 @@ const INITIAL_STATE = {
     trackImg: `${PLAYLIST[0].playlistData[0].songimg}`,
     trackArtist: `${PLAYLIST[0].playlistData[0].songArtist}`
   },
-  isPlaying: false
+  isPlaying: false,
+  favorite: []
 };
 
 export const reducer = (state = INITIAL_STATE, action) => {
@@ -20,7 +22,6 @@ export const reducer = (state = INITIAL_STATE, action) => {
         isPlaying: action.payload
       };
     case CHANGETRACKSONG:
-      console.log('redux: ', action);
       return {
         ...state,
         trackData: {
@@ -48,6 +49,22 @@ export const reducer = (state = INITIAL_STATE, action) => {
             }`
         }
       };
+    case FAVORITE:
+      console.log('redux: ', action.payload, state.favorite);
+      if (!state.favorite?.find(item => action.payload.trackName === item.trackName)) {
+        return {
+          ...state,
+          favorite: [
+            ...state.favorite,
+            action.payload
+          ]
+        };
+      } else {
+        return {
+          ...state,
+          favorite: state.favorite?.filter(item => action.payload.trackName !== item.trackName)
+        };
+      }
     default:
       return state;
   }

@@ -34,7 +34,7 @@ export const PLAYLISTBTN = [
   },
   {
     title: 'Bài hát đã thích',
-    path: '/',
+    path: '/favorite',
     ImgName: 'popularSong',
   }
 ]

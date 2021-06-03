@@ -5,23 +5,23 @@ import IconButton from '../buttons/icon-button';
 import styles from "./footer-right.module.css";
 import { useState } from 'react';
 
-function FooterRight({ volume, setVolume }){
+function FooterRight({ volume, setVolume, trackData }) {
     return (
         <div className={styles.footerRight}>
-            <IconButton icon={<Icons.Mix />} activeicon={<Icons.Mix />}/>
-            <IconButton icon={<Icons.DownloadApp />} activeicon={<Icons.DownloadApp />}/>
+            <IconButton icon={<Icons.Mix />} activeicon={<Icons.Mix />} />
+            <a target="_blank" href={trackData.track}><IconButton icon={<Icons.DownloadApp />} activeicon={<Icons.DownloadApp />} /></a>
             <SoundLevel volume={volume} setVolume={setVolume} />
         </div>
     );
 }
 
-function SoundLevel({ volume, setVolume }){
-    const[lastVolume, setLastVolume] = useState(1);
+function SoundLevel({ volume, setVolume }) {
+    const [lastVolume, setLastVolume] = useState(1);
 
     const soundBtn = () => {
-        if(volume == 0){
+        if (volume == 0) {
             setVolume(lastVolume);
-        }else{
+        } else {
             setLastVolume(volume);
             setVolume(0);
         }
@@ -30,9 +30,9 @@ function SoundLevel({ volume, setVolume }){
     return (
         <div className={styles.soundBar}>
             <div tabIndex="0" role="button" onClick={soundBtn}>
-                <IconButton icon={<Icons.Sound />} activeicon={<Icons.SoundClose />}/>
+                <IconButton icon={<Icons.Sound />} activeicon={<Icons.SoundClose />} />
             </div>
-            <RangeSlider minvalue={0} maxvalue={1} value={volume} handleChange={setVolume}/>
+            <RangeSlider minvalue={0} maxvalue={1} value={volume} handleChange={setVolume} />
         </div>
     );
 }

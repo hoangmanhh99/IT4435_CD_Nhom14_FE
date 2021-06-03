@@ -77,6 +77,7 @@ function Footer(props) {
                 </div>
                 {size.width > CONST.MOBILE_SIZE &&
                     <FooterRight
+                        trackData={props.trackData}
                         volume={volume}
                         setVolume={setVolume}
                     />

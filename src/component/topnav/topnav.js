@@ -23,7 +23,12 @@ function Topnav({ search = false, tabButtons = false }) {
         <span>
           <Link to="/login">
             <Button className={styles.ProfileBtn} href="">
-              Login
+              Đăng nhập
+            </Button>
+          </Link>
+          <Link to="/register">
+            <Button className={styles.ProfileBtn} href="">
+              Đăng kí
             </Button>
           </Link>
         </span>
